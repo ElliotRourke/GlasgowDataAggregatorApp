@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-@HttpExchange(url = "${url.gov.glasgow.footfall.sites}", accept = MediaType.APPLICATION_JSON_VALUE)
+@HttpExchange(url = "${url.gov.glasgow.footfall.base}", accept = MediaType.APPLICATION_JSON_VALUE)
 public interface GlasgowFootfallService {
     @GetExchange("/Mobility_Sites?json")
     Mono<List<Site>> getSites();

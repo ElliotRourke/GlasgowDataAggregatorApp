@@ -1,5 +1,6 @@
 package org.elliot.GlasgowDataAggregator.config.web;
 
+import org.elliot.GlasgowDataAggregator.service.supplier.GlasgowCycleAndPedestrianCountService;
 import org.elliot.GlasgowDataAggregator.service.supplier.GlasgowFootfallService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,15 @@ public class HttpProxyConfig {
                 .embeddedValueResolver(configurableBeanFactory::resolveEmbeddedValue)
                 .build();
         return factory.createClient(GlasgowFootfallService.class);
+    }
+
+    @Bean
+    GlasgowCycleAndPedestrianCountService glasgowCycleAndPedestrianCountService(WebClient webClient, ConfigurableBeanFactory configurableBeanFactory) {
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory
+                .builder(WebClientAdapter.forClient(webClient))
+                .embeddedValueResolver(configurableBeanFactory::resolveEmbeddedValue)
+                .build();
+        return factory.createClient(GlasgowCycleAndPedestrianCountService.class);
     }
 
 }

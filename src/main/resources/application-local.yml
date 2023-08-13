@@ -9,4 +9,4 @@ url:
  gov:
   glasgow:
    footfall:
-    sites: "https://api.glasgow.gov.uk/mobility/v1"
+    base: "https://api.glasgow.gov.uk/mobility/v1"
