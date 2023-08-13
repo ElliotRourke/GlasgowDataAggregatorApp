@@ -6,6 +6,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Function;
 
+//TODO: Not sure how I feel about using Function interface here as a "supplier"
 public class GlasgowFootfallMeasurementSupplier implements Function<MeasurementRequest, Mono<Measurement>> {
 
     private final GlasgowFootfallMeasurementService glasgowFootfallMeasurementService;

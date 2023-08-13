@@ -33,6 +33,6 @@ public class GlasgowFootfallMeasurementService {
                 .build();
         return glasgowFootfallMeasurementSupplier
                 .apply(measurementRequest)
-                .map(responseEntityWrapperFunction);
+                .map(responseEntityWrapperFunction); //TODO: do any processing here
     }
 }
