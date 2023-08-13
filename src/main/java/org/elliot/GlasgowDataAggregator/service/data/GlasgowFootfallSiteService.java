@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @Service
-public class GlasgowFootfallSiteService implements DataService<ResponseEntity<List<Site>>> {
+public class GlasgowFootfallSiteService {
 
     private final GlasgowFootfallSiteSupplier glasgowFootfallSiteSupplier;
     private final ResponseEntityWrapperFunction<List<Site>> responseEntityWrapperFunction;
@@ -21,7 +21,6 @@ public class GlasgowFootfallSiteService implements DataService<ResponseEntity<Li
         this.responseEntityWrapperFunction = responseEntityWrapperFunction;
     }
 
-    @Override
     public Mono<ResponseEntity<List<Site>>> getData() {
         return glasgowFootfallSiteSupplier
                 .get()

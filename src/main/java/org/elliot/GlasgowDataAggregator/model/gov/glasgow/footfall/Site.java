@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Site {
-    String id;
-    String name;
-    String lat;
-    String lon;
+    private String id;
+    private String name;
+    private String lat;
+    private String lon;
 }
