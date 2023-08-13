@@ -1,0 +1,12 @@
+Spring:
+ application:
+  name: "GlasgowDataAggregator"
+ main:
+  banner-mode: "off"
+
+#Urls
+url:
+ gov:
+  glasgow:
+   footfall:
+    sites: "https://api.glasgow.gov.uk/mobility/v1"
