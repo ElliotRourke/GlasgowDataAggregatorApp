@@ -1,7 +1,7 @@
 package org.elliot.GlasgowDataAggregator.controller;
 
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Site;
-import org.elliot.GlasgowDataAggregator.service.aggregator.GlasgowFootfallSiteService;
+import org.elliot.GlasgowDataAggregator.service.data.GlasgowFootfallSiteService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

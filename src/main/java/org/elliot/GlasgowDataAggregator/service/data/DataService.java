@@ -1,4 +1,4 @@
-package org.elliot.GlasgowDataAggregator.service.aggregator;
+package org.elliot.GlasgowDataAggregator.service.data;
 
 import reactor.core.publisher.Mono;
 

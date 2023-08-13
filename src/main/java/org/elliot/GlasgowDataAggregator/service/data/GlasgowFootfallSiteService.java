@@ -1,4 +1,4 @@
-package org.elliot.GlasgowDataAggregator.service.aggregator;
+package org.elliot.GlasgowDataAggregator.service.data;
 
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Site;
 import org.elliot.GlasgowDataAggregator.service.function.ResponseEntityWrapperFunction;
