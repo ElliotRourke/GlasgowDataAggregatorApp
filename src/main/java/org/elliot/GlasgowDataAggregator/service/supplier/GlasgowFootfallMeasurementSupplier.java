@@ -1,18 +1,21 @@
 package org.elliot.GlasgowDataAggregator.service.supplier;
 
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Measurement;
-import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.MeasurementRequest;
+import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.request.MeasurementRequest;
+import org.elliot.GlasgowDataAggregator.service.function.MeasurementResponseTransformer;
 import reactor.core.publisher.Mono;
 
 import java.util.function.Function;
 
-//TODO: Not sure how I feel about using Function interface here as a "supplier"
 public class GlasgowFootfallMeasurementSupplier implements Function<MeasurementRequest, Mono<Measurement>> {
 
     private final GlasgowFootfallMeasurementService glasgowFootfallMeasurementService;
+    private final MeasurementResponseTransformer measurementResponseTransformer;
 
-    public GlasgowFootfallMeasurementSupplier(GlasgowFootfallMeasurementService glasgowFootfallMeasurementService) {
+    public GlasgowFootfallMeasurementSupplier(GlasgowFootfallMeasurementService glasgowFootfallMeasurementService,
+                                              MeasurementResponseTransformer measurementResponseTransformer) {
         this.glasgowFootfallMeasurementService = glasgowFootfallMeasurementService;
+        this.measurementResponseTransformer = measurementResponseTransformer;
     }
 
     @Override
@@ -23,16 +26,6 @@ public class GlasgowFootfallMeasurementSupplier implements Function<MeasurementR
                 measurementRequest.getStartDate(),
                 measurementRequest.getSite(),
                 measurementRequest.getEndDate()
-        );
-    }
-
-    @Override
-    public <V> Function<V, Mono<Measurement>> compose(Function<? super V, ? extends MeasurementRequest> before) {
-        return Function.super.compose(before);
-    }
-
-    @Override
-    public <V> Function<MeasurementRequest, V> andThen(Function<? super Mono<Measurement>, ? extends V> after) {
-        return Function.super.andThen(after);
+        ).map(measurementResponseTransformer);
     }
 }

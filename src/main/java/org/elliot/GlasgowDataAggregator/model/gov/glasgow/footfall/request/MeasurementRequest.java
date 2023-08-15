@@ -1,4 +1,4 @@
-package org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall;
+package org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.request;
 
 import lombok.Getter;
 

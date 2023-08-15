@@ -1,6 +1,6 @@
 package org.elliot.GlasgowDataAggregator.controller;
 
-import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.FootfallType;
+import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.request.FootfallType;
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Measurement;
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Site;
 import org.elliot.GlasgowDataAggregator.service.data.GlasgowFootfallMeasurementService;

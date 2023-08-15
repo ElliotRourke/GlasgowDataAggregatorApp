@@ -1,8 +1,8 @@
 package org.elliot.GlasgowDataAggregator.service.data;
 
-import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.FootfallType;
+import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.request.FootfallType;
 import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.Measurement;
-import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.MeasurementRequest;
+import org.elliot.GlasgowDataAggregator.model.gov.glasgow.footfall.request.MeasurementRequest;
 import org.elliot.GlasgowDataAggregator.service.function.ResponseEntityWrapperFunction;
 import org.elliot.GlasgowDataAggregator.service.supplier.GlasgowFootfallMeasurementSupplier;
 import org.springframework.http.ResponseEntity;

@@ -14,13 +14,4 @@ public class ResponseEntityWrapperFunction<T> implements Function<T, ResponseEnt
         return new ResponseEntity<>(t, HttpStatusCode.valueOf(200));
     }
 
-    @Override
-    public <V> Function<V, ResponseEntity<T>> compose(Function<? super V, ? extends T> before) {
-        return Function.super.compose(before);
-    }
-
-    @Override
-    public <V> Function<T, V> andThen(Function<? super ResponseEntity<T>, ? extends V> after) {
-        return Function.super.andThen(after);
-    }
 }
